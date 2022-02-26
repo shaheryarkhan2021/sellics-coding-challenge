@@ -1,8 +1,10 @@
-import counterReducer from './counter'
+import addedImages from './addedImages'
+import rejectedImages from './rejectedImages'
 import { combineReducers } from 'redux'
 
 const allReducers = combineReducers({
-	counter: counterReducer
+	addedImages: addedImages,
+	rejectedImages:rejectedImages
 })
 
 export default allReducers

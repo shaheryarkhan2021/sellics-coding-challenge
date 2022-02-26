@@ -11,7 +11,6 @@ border-radius: 25px;
 `;
 
 function Button(props){
-	console.log("PROPS",props)
 return (
 	<StyledButton buttonType = {props.buttonType}>Button</StyledButton>
 	)

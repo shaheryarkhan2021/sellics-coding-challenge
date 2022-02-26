@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import Button from '../Button'
 import ImageView from '../ImageView'
 import {useSelector,useDispatch} from 'react-redux'
-import increment from '../../actions'
+import addImage from '../../actions/addImage'
+import rejectImage from '../../actions/rejectImage'
 
 const StyledContainer = styled.div`
   margin: auto;
@@ -35,10 +36,10 @@ function Container(){
   const dispatch = useDispatch()
   // dispatch(increment())
   const handleDispatch = () => {
-    dispatch(increment())
+    dispatch(rejectImage())
   }
   const myObject = useSelector(state=> state)
-  console.log("myObject",myObject.counter)
+  console.log("myObject",myObject)
 
   return (
   <StyledContainer>
