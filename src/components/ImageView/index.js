@@ -6,17 +6,20 @@ import LowerHeading from "../LowerHeading";
 import StyledImageView  from "../StyledImageView";
 
 function ImageView({ height, width }) {
+  const handleClick = () =>{
+    console.log("Span Clicked")
+  }
   return (
     <>
       <StyledImageView height={height} width={width}>
-        <PlusIcon />
+        <span onClick={handleClick}><PlusIcon /></span>
       </StyledImageView>
       <Border borderSetting="partial" />
       <ButtonRow/>
       <LowerHeading>
-        <span>Click on the&nbsp;</span>
+        <span>Click on the&nbsp;
         <PlusIcon size={"1em"} />
-        <span>&nbsp;in order to get image recommendations</span>
+        &nbsp;in order to get image recommendations</span>
       </LowerHeading>
     </>
   );
