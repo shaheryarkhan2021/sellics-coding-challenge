@@ -1,9 +1,10 @@
-import './App.css';
-import Container from './components/container'
+import "./App.css";
+// import Container from "./components/container";
+import MainPage from "./pages/mainPage"
 function App() {
   return (
     <div>
-      <Container/>
+      <MainPage />
     </div>
   );
 }
