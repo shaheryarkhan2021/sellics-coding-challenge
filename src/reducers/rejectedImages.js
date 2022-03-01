@@ -1,7 +1,7 @@
 const rejectedImages = (state = [], action) => {
   switch (action.type) {
     case "REJECT_IMAGE":
-      return [...state, 1];
+      return [...state, action.payload.id];
     default:
       return state;
   }

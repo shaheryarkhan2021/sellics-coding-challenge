@@ -1,7 +1,7 @@
 const addedImages = (state = [], action) => {
   switch (action.type) {
     case "ADD_IMAGE":
-      return [...state, 1];
+      return [...state, action.payload.url];
     default:
       return state;
   }

@@ -24,7 +24,7 @@ const StyledButton = styled.button`
 
 function Button(props) {
   return (
-    <StyledButton buttonType={props.buttonType}>
+    <StyledButton buttonType={props.buttonType} onClick={props.onClick}>
       {props.buttonType === "blue" ? (
         <FontAwesomeIcon icon={faCheck} />
       ) : (

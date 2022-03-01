@@ -1,7 +1,8 @@
 import * as types from "./actionTypes";
-const rejectImage = () => {
+const rejectImage = (payload) => {
   return {
     type: types.REJECT_IMAGE,
+    payload
   };
 };
 export default rejectImage;
