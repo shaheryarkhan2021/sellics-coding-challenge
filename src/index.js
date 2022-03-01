@@ -5,8 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./Theme";
-import { createStore, applyMiddleware } from "redux";
-import thunk from 'redux-thunk'
+import { createStore } from "redux";
 import { Provider } from "react-redux";
 import allReducers from "./reducers";
 import { persistStore, persistReducer } from "redux-persist";
@@ -21,7 +20,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, allReducers);
 
-const store = createStore(persistedReducer, applyMiddleware(thunk));
+const store = createStore(persistedReducer);
 const persistor = persistStore(store);
 
 ReactDOM.render(

@@ -14,23 +14,29 @@ const photoObject={
   id: " ",
   url:" "
 }
-function ButtonRow() {
+function ButtonRow({approveImage, disapproveImage}) {
   const dispatch = useDispatch()
   const myObject = useSelector(state => state)
-  const handleClick = () => {
-    dispatch(rejectImage(photoObject))
-    console.log("myObject", myObject)
+
+  const rejectedImage = () => {
+    getRandomPhoto().then((response) => {
+      photoObject.id =response.data.id
+      photoObject.url = response.data.urls.thumb
+      dispatch(rejectImage(photoObject))
+    })
   }
 
-  const actionDispatching = () => {
-    dispatch(addImage(getRandomPhoto))
-    console.log("myObject", myObject)
-    
+  const saveImage = () => {
+    getRandomPhoto().then((response) => {
+      photoObject.id =response.data.id
+      photoObject.url = response.data.urls.thumb
+      dispatch(addImage(photoObject))
+    })
   }
   return (
     <StyledButtonRow>
-      <Button onClick={handleClick} />
-      <Button buttonType={"blue"} onClick={actionDispatching}/>
+      <Button onClick={disapproveImage} />
+      <Button buttonType={"blue"} onClick={approveImage}/>
     </StyledButtonRow>
   );
 }

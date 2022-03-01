@@ -10,12 +10,5 @@ export async function getRandomPhoto() {
   }
   const resp = await axios
     .get(requestURL)
-    .then(function (response) {
-      photoObject.id =response.data.id
-      photoObject.url = response.data.urls.small_s3
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
     return resp
 }

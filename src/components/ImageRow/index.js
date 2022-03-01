@@ -23,23 +23,47 @@ margin: auto;
   -webkit-transform: rotate(-45deg);
 }
 `
-function ImageRow(){
-  return(
+function ImageRow({images}){
 
-    <StyledImageView height={"70px"} width={"100px"} setting={"left"}>
-      <PlusIcon size={"1em"} />
-    </StyledImageView>
-    // <StyledCarousel>
-    // <Carousel show={5.5} slide={3} swiping={true}>
-		//   <StyledImageView height={"70px"} width={"100px"}></StyledImageView>
-    //   <StyledImageView height={"70px"} width={"100px"}></StyledImageView>
-    //   <StyledImageView height={"70px"} width={"100px"}></StyledImageView>
-    //   <StyledImageView height={"70px"} width={"100px"}></StyledImageView>
-    //   <StyledImageView height={"70px"} width={"100px"}></StyledImageView>
-    //   <StyledImageView height={"70px"} width={"100px"}></StyledImageView>
-    //   <StyledImageView height={"70px"} width={"100px"}></StyledImageView>
-	  // </Carousel>
-    // </StyledCarousel>
+  const emptyImage = () => {
+    return (<StyledImageView height={"70px"} width={"100px"} setting={"left"}>
+    <PlusIcon size={"1em"} />
+  </StyledImageView>)
+  }
+
+  const singleImage = (image) => {
+    return (<StyledImageView height={"70px"} width={"100px"} setting={"left"}>
+    <img height={"100%"} width={"100%"} src={image}/>
+  </StyledImageView>)
+  }
+  
+  const multipleImages = (images) => {
+    return(<StyledCarousel>
+    <Carousel show={5.5} slide={3} swiping={true}>
+      {
+        images.map((src)=> {
+          return singleImage(src)
+        })
+      }
+	  </Carousel>
+    </StyledCarousel>)
+  }
+
+  const CarouselView = ({images}) => {
+
+    if(images.length === 0){
+      return emptyImage()
+    }
+    else if(images.length === 1){
+      return singleImage(images[0])
+    }
+    else if(images.length > 1){
+      return multipleImages(images)
+    }
+  }
+
+  return(
+    <CarouselView images={images}/>
   )
 }
 

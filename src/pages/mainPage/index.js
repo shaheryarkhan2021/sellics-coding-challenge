@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from 'react-redux'
 
 import Border from "../../components/Border";
 import ImageView from "../../components/ImageView";
@@ -8,12 +9,13 @@ import ImageRow from "../../components/ImageRow"
 
 function MainPage() {
 
+  const savedImages = useSelector((state) => state.addedImages)
   return (
     <Container>
       <Heading> {"IMAGE APPROVAL APPLICATION"} </Heading>
       <Border />
       <Heading> {`APPROVED IMAGES (0)`} </Heading>
-      <ImageRow/>
+      <ImageRow images={savedImages}/>
       <Border borderSetting="partial" />
       <ImageView height={"20em"} />
       {/* <button onClick={handleDispatch}>click</button> */}
