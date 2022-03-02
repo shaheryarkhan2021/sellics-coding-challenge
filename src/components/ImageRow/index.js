@@ -39,7 +39,7 @@ function ImageRow({images}){
   
   const multipleImages = (images) => {
     return(<StyledCarousel>
-    <Carousel show={5.5} slide={3} swiping={true}>
+    <Carousel show={3} slide={2} swiping={true}>
       {
         images.map((src)=> {
           return singleImage(src)

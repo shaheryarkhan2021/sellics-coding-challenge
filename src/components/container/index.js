@@ -3,9 +3,9 @@ import React, { useState } from "react";
 
 const StyledContainer = styled.div`
   margin: auto;
-  width: 85%;
+  width: 400px;
   background-color: ${(props) => props.theme.mainBodyColor};
-  margin-top: 60px;
+  margin-top: 30px;
   border-radius: 5px;
 `;
 

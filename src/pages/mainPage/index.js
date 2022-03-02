@@ -17,7 +17,7 @@ function MainPage() {
       <Heading> {`APPROVED IMAGES (${savedImages.length})`} </Heading>
       <ImageRow images={savedImages}/>
       <Border borderSetting="partial" />
-      <ImageView height={"20em"} />
+      <ImageView height={"30em"} />
       {/* <button onClick={handleDispatch}>click</button> */}
       {/* <button onClick={getPhoto}>getPhoto</button> */}
     </Container>
