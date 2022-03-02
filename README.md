@@ -1,16 +1,16 @@
 ## Task Details
 
-All the requirments of the project have been fulfilled 
+All the requirments of the project have been fulfilled
+
 1. To retain the state of of application at the time of reload I have used redux persist
 2. Have used axios to make the the API call
 3. Functional components and Styled components have been used in the application
 4. Test cases have been written using enzyme and enzyme-to-json
 
 ## Loom Video
+
 A loom recording have also been created of the running application
 link: https://www.loom.com/share/dc712449c4e64479a263222e5f835680
-
-
 
 ## Available Scripts
 

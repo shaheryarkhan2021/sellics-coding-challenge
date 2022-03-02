@@ -5,9 +5,10 @@ import allReducers from "./reducers";
 import App from "./App";
 
 test("renders learn react link", () => {
-  const store = createStore(allReducers)
-  render(<Provider store={store}>
-    <App />
-    </Provider>);
-
+  const store = createStore(allReducers);
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 });

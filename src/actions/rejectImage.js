@@ -2,7 +2,7 @@ import * as types from "./actionTypes";
 const rejectImage = (payload) => {
   return {
     type: types.REJECT_IMAGE,
-    payload
+    payload,
   };
 };
 export default rejectImage;

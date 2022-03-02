@@ -9,12 +9,8 @@ const StyledContainer = styled.div`
   border-radius: 5px;
 `;
 
-function Container({children}) {
-  return (
-    <StyledContainer>
-      {children}
-    </StyledContainer>
-  );
+function Container({ children }) {
+  return <StyledContainer>{children}</StyledContainer>;
 }
 
 export default Container;
