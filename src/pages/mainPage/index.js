@@ -14,7 +14,7 @@ function MainPage() {
     <Container>
       <Heading> {"IMAGE APPROVAL APPLICATION"} </Heading>
       <Border />
-      <Heading> {`APPROVED IMAGES (0)`} </Heading>
+      <Heading> {`APPROVED IMAGES (${savedImages.length})`} </Heading>
       <ImageRow images={savedImages}/>
       <Border borderSetting="partial" />
       <ImageView height={"20em"} />

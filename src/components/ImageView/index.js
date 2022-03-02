@@ -10,14 +10,20 @@ import addImage from "../../actions/addImage"
 import rejectImage from "../../actions/rejectImage"
 
 function ImageView({ height, width }) {
+
+  const rejectedImages = useSelector((state) => state.rejectedImages)
   const dispatch = useDispatch()
   const [image, setImage] = useState(null);
   const [photoId,setPhotoId] = useState(null)
 
   const handleClick = () =>{
+
     getRandomPhoto().then((response) => {
       setImage(response.data.urls.thumb)
       setPhotoId(response.data.id)
+      if(rejectedImages.includes(photoId)){
+        handleClick()
+      }
     })
   }
 
@@ -28,6 +34,17 @@ function ImageView({ height, width }) {
     return <span onClick={handleClick}><PlusIcon /></span>
   }
 
+  const LowerSection = () => {
+    if (image){
+      return <ButtonRow approveImage={approveImage} disapproveImage={disapproveImage} />
+    }
+    return (
+    <LowerHeading>
+      <span>Click on the&nbsp;
+      <PlusIcon size={"1em"} />
+      &nbsp;in order to get image recommendations</span>
+    </LowerHeading>)
+  }
   const approveImage = () => {
     dispatch(addImage(image))
     handleClick()
@@ -43,12 +60,7 @@ function ImageView({ height, width }) {
         <MainSection/>
       </StyledImageView>
       <Border borderSetting="partial" />
-      <ButtonRow approveImage={approveImage} disapproveImage={disapproveImage} />
-      <LowerHeading>
-        <span>Click on the&nbsp;
-        <PlusIcon size={"1em"} />
-        &nbsp;in order to get image recommendations</span>
-      </LowerHeading>
+      <LowerSection/>
     </>
   );
 }
